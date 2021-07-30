@@ -7,7 +7,6 @@ def play():
     word_list = ["mango", "apple", "banana", "grapes", "papaya", "pineapple", "peach", "strawberry"]
     chosen_word = random.choice(word_list)
     print("Hint!!    Word is a fruit name.")
-
     word_length = len(chosen_word)
     display = []
     for _ in range(word_length):
@@ -15,12 +14,10 @@ def play():
     print(f"{' '.join(display)}")
     while not end_of_game:
         guess = input("Guess the word : ")
-
         for position in range(word_length):
             letter = chosen_word[position]
             if letter == guess:
                 display[position] = letter
-
         if guess not in chosen_word:
             print("You guess the wrong letter! Try again.")
             lives -= 1
@@ -37,7 +34,6 @@ def play():
         play()
     else:
         print("You exited")
-
 
 print("Welcome to the Word guess game.\n")
 play()
